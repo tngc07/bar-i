@@ -1,0 +1,67 @@
+{
+  "templates": [
+    {
+      "name": "Northwind Traders Simple Invoice",
+      "keywords": ["Northwind Traders", "Invoice"],
+      "fields": {
+        "supplier": {
+          "pattern": "Northwind Traders",
+          "group": 0
+        },
+        "invoice_number": {
+          "pattern": "Invoice Number[:#\\s]*([A-Z0-9-]+)",
+          "group": 1
+        },
+        "invoice_date": {
+          "pattern": "Invoice Date[:\\s]*([A-Za-z0-9, ]+)",
+          "group": 1,
+          "transform": "date"
+        },
+        "due_date": {
+          "pattern": "Due Date[:\\s]*([A-Za-z0-9, ]+)",
+          "group": 1,
+          "transform": "date"
+        },
+        "total": {
+          "pattern": "Total Due[:\\s$]*([\\d,.]+)",
+          "group": 1,
+          "transform": "currency"
+        }
+      }
+    },
+    {
+      "name": "Blue Bakery Invoice",
+      "keywords": ["Blue Bakery", "Amount Due"],
+      "fields": {
+        "supplier": {
+          "pattern": "Blue Bakery",
+          "group": 0
+        },
+        "invoice_number": {
+          "pattern": "Invoice #[:\\s]*([A-Z0-9-]+)",
+          "group": 1
+        },
+        "invoice_date": {
+          "pattern": "Date[:\\s]*([A-Za-z0-9, ]+)",
+          "group": 1,
+          "transform": "date"
+        },
+        "subtotal": {
+          "pattern": "Subtotal[:\\s$]*([\\d,.]+)",
+          "group": 1,
+          "transform": "currency"
+        },
+        "tax": {
+          "pattern": "Tax[:\\s$]*([\\d,.]+)",
+          "group": 1,
+          "transform": "currency"
+        },
+        "total": {
+          "pattern": "Amount Due[:\\s$]*([\\d,.]+)",
+          "group": 1,
+          "transform": "currency"
+        }
+      }
+    }
+  ]
+}
