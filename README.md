@@ -63,6 +63,26 @@ any fields that were captured for the selected invoice.
 
 ## Creating new templates
 
+<<<<<<< ours
+=======
+You can bootstrap a template directly from a sample invoice using the learning
+CLI:
+
+```bash
+python -m invoice_extractor.learn 1013-1016-1.pdf \
+  --field invoice_number=1013-1016-1 \
+  --field total="$456.00" \
+  --keyword "Your Vendor Name" \
+  --output custom_templates.json
+```
+
+The command will run OCR on the provided document (pass `--text-input` if you
+already have a plain text version), infer robust regular expressions for the
+supplied field samples, and either create or update the destination JSON file.
+The generated template is immediately compatible with both the CLI and the GUI
+via the existing `--templates` option.
+
+>>>>>>> theirs
 Templates are stored as JSON files. Each template defines:
 
 - A `name`

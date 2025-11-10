@@ -6,6 +6,7 @@ structured data.
 """
 
 from .pipeline import InvoiceExtractor, ExtractionResult
+from .template_learning import learn_template_from_text
 from .templates import TemplateRepository, RegexInvoiceTemplate
 
 __all__ = [
@@ -13,4 +14,5 @@ __all__ = [
     "ExtractionResult",
     "TemplateRepository",
     "RegexInvoiceTemplate",
+    "learn_template_from_text",
 ]
